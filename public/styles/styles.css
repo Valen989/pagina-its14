@@ -72,5 +72,27 @@ background-color: var(--naranja);
     justify-content: center;
     gap: 10%;
     color: var(--gris-oscuro);
+    font-family: "Roboto Mono", serif;
+
 }
 
+.dato-1{
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+
+}
+
+.dato-2{
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+
+}
+
+.dato-3{
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+
+}

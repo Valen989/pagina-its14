@@ -63,7 +63,7 @@
     </div>
     </main>
     <script>
-      async function recargarDatos() {
+      async function recargarDatos(tipo) {
         try {
           const response = await fetch('/apiRest/mediciones');
           const datos = await response.json();
