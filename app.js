@@ -6,7 +6,13 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', (req,res) => res.sendFile(path.join(__dirname, 'views','home.html')));
+const indexRoutes = require('./routes/index.routes')
+const apiRestRoutes = require('./routes/apiRest.routes')
+
+
+app.use("/",indexRoutes)
+
+app.use("/apiRest",apiRestRoutes)
 
 
 app.listen(PORT, () => console.log('Server running in http://localhost:' + PORT))

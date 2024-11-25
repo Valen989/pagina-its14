@@ -9,34 +9,87 @@
   </head>
   <body>
     <!-- cabecera de la página -->
-    <header class="header">
+    <header class="cabezera">
     <div class="imagen-ifts">
-     <img src="/images/IFTS14 logo.webp" alt="logo IFTS14">
+     <img src="/images/IFTS14 logo.png" alt="logo IFTS14">
+     
     </div>
-    
-     <h1>Trabajo integrador Ifts14</h1>
+    <div>
 
-     <h3>Valentino Parma</h3>
+    <div class="barra">
+      <div class="panel">
+        <a href="/">Panel de datos</a>
+      </div>
+      
+    <div>
+      <a href="/Circuito">Circuito de alarma</a>
+    </div>
+
+    
+     
+    
+  </div>
+     
      
     </header>
     <!-- sección de datos -->
     <main class="main">
+      <div class="titulo">
+        <h1>Trabajo integrador Ifts14</h1>
+      </div>
+
+      <div class="nombre">
+        <h3>Valentino Parma</h3>
+      </div>
+     
+<div class="datos">
+
+
       <div class="dato-1">
         <p>Temperatura</p>
         <p id="dato-temperatura">24°</p>
-        <button name="button">Recargar</button>
+        <button name="button" onclick="recargarDatos('temperatura')">Recargar</button>
       </div>
       <div class="dato-2">
         <p>Voltaje</p>
         <p id="dato-voltaje">24 V</p>
-        <button name="button">Recargar</button>
+        <button name="button" onclick="recargarDatos('voltaje')">Recargar</button>
       </div>
       <div class="dato-3">
         <p>Perdida de gas</p>
         <p id="dato-gas">false</p>
-        <button name="button">Recargar</button>
+        <button name="button" onclick="recargarDatos('gas')">Recargar</button>
       </div>
+    </div>
     </main>
+    <script>
+      async function recargarDatos() {
+        try {
+          const response = await fetch('/apiRest/mediciones');
+          const datos = await response.json();
+    
+          //último elemento del JSON
+          const ultimoDato = datos[datos.length - 1];
+    
+          // Actualiza los elementos <p> con los nuevos datos
+
+          if (tipo === 'temperatura') {
+        document.getElementById('dato-temperatura').innerText = ultimoDato.valor_temp + '°';
+      } else if (tipo === 'voltaje') {
+        document.getElementById('dato-voltaje').innerText = ultimoDato.valor_volt;
+      } else if (tipo === 'gas') {
+        document.getElementById('dato-gas').innerText = ultimoDato.valor_luz ? 'true' : 'false';
+      }
+        } catch (error) {
+          console.error('Error al obtener los datos:', error);
+        }
+      }
+    
+      // Asigna la función al evento click de los botones
+      document.querySelectorAll('button[name="button"]').forEach(button => {
+        button.addEventListener('click', recargarDatos);
+      });
+    </script>
     <!-- pie de pagina (footer) -->
      <footer class="footer">
        <h4>Proyecto ifts Nro°14</h4>

@@ -1,24 +1,76 @@
-*{
-    background-color: beige;
-}
-
+@import url('./variables.css');
+@import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+JP:wght@100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('../animations/animations.css');
 
 /*Header*/
-
-
-.header{
-    
+*{
+    background-color: var(--gris-claro);
 }
+
+
 
 .imagen-ifts{
     display: flex;
     justify-content: center;
+    
+   
+}
+
+.barra{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    font-size: 15px;
+    font-family: "Roboto Mono", serif;
+    
+}
+
+.barra a{
+    text-decoration: none;
+    background-color: var(--verde-azulado);
+    color: black;
+    border: 2px solid black;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    
+    
+}
+
+.panel a{
+    background-color: var(--naranja);
 }
 
 
+.barra a:hover{
+background-color: var(--naranja);
+}
+
+
+/*Seccion titulo y todo lo de abajo*/
 .main{
    
 }
 
+.titulo{
+    display: flex;
+    font-family: "Noto Sans JP", serif;
+    font-size: 12px;
+    justify-content: center;
+    color: var(--azul-claro);
+}
 
+.nombre{
+    display: flex;
+    justify-content: center;
+    font-family: "Noto Sans JP", serif;
+    font-size: 12px;
+    color: var(--gris-oscuro);
+}
+
+.datos{
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    color: var(--gris-oscuro);
+}
 

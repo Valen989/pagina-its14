@@ -1,0 +1,22 @@
+[{
+    "id": 1,
+    "valor_temp": 32.4,
+    "valor_volt": "rojo",
+    "valor_corriente": 143,
+    "valor_luz": true
+    },
+    {
+    "id": 2,
+    "valor_temp": 22.1,
+    "valor_volt": 219.2,
+    "valor_corriente": 35,
+    "valor_luz": false
+    },
+    {
+    "id": 3,
+    "valor_temp": 67.8,
+    "valor_volt": 231.0,
+    "valor_corriente": 8,
+    "valor_luz": true
+    }
+]
