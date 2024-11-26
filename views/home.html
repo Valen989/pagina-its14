@@ -68,24 +68,23 @@
           const response = await fetch('/apiRest/mediciones');
           const datos = await response.json();
     
-          //último elemento del JSON
+
           const ultimoDato = datos[datos.length - 1];
-    
-          // Actualiza los elementos <p> con los nuevos datos
+
 
           if (tipo === 'temperatura') {
         document.getElementById('dato-temperatura').innerText = ultimoDato.valor_temp + '°';
       } else if (tipo === 'voltaje') {
-        document.getElementById('dato-voltaje').innerText = ultimoDato.valor_volt;
+        document.getElementById('dato-voltaje').innerText = ultimoDato.valor_volt + "V";
       } else if (tipo === 'gas') {
-        document.getElementById('dato-gas').innerText = ultimoDato.valor_luz ? 'true' : 'false';
+        document.getElementById('dato-gas').innerText = ultimoDato.valor_gas ? 'true' : 'false';
       }
         } catch (error) {
           console.error('Error al obtener los datos:', error);
         }
       }
     
-      // Asigna la función al evento click de los botones
+
       document.querySelectorAll('button[name="button"]').forEach(button => {
         button.addEventListener('click', recargarDatos);
       });
