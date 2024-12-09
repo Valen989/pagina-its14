@@ -15,5 +15,11 @@
     "valor_temp": 67.8,
     "valor_volt": 231.0,
     "valor_gas": true
+    },
+    {
+        "id": 4,
+        "valor_temp": 67.8,
+        "valor_volt": 231.0,
+        "valor_gas": false
     }
 ]
